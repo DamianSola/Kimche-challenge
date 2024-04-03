@@ -1,29 +1,38 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import style from "./style.module.css"
+import {GET_CHARACTER_BY_NAME} from "./../../Client";
+import { useQuery } from "@apollo/client";
+import { useDispatch, useSelector } from "react-redux";
+import {getCharacterByName} from "./../../redux/actions";
+import { GenderFilter, SpeciesFilter, StatusFilter } from "../Filters/Index";
+
+const NavBar = ({cleanFilter}) => {
+
+    const [character, setCharacter] = useState([])
+    const {loading, error, data} = useQuery(GET_CHARACTER_BY_NAME, {
+        variables: { characterName : character },
+    });
+    const dispatch = useDispatch()
+   
+    
+    const  handleInputChange = (e) => {
+        setCharacter(e.target.value);
+    }
 
 
-const NavBar = () => {
+    useEffect(() => {
+        data && dispatch(getCharacterByName(data.characters.results))
+    },[data])
+
     return(
         <nav className={style.navContent}>
             <img className={style.navImg} src="https://i.pinimg.com/736x/cf/c3/08/cfc308095c39dbb5a7975d5e89564836.jpg"/>
             <div className={style.searchContent}>
-                <input className={style.search} type="text" placeholder="search character..."/>
-                <button className={style.btnSearch}>search</button>
-                <section>
-
-                <select>
-                    <option value="default">Sort by: Popularity</option>
-                    <option value="default">Sort by: Popularity</option>
-                    <option value="default">Sort by: Popularity</option>
-                    <option value="default">Sort by: Popularity</option>  
-                </select>
-
-                   <select name="" id="">
-                   <option value="default">Sort by: Popularity</option>
-                    <option value="default">Sort by: Popularity</option>
-                    <option value="default">Sort by: Popularity</option>
-                    <option value="default">Sort by: Popularity</option></select>     
-                </section>
+                <input className={style.search} onChange={(e) => handleInputChange(e)} type="text" placeholder="search character..."/>
+            <GenderFilter/>
+            <SpeciesFilter/>
+            <StatusFilter/>
+            <button onClick={cleanFilter}>limpiar filtros</button>
             </div>
         </nav>
     )

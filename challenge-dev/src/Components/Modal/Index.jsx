@@ -1,26 +1,7 @@
 import style from "./style.module.css"
+import { useQuery } from '@apollo/client';
+import {GET_CHARACTER_ID} from "./../../Client"
 
-import { useQuery, gql } from '@apollo/client';
-
-
-const GET_CHARACTER_ID = gql`
-query getCharacterById( $characterId: ID!){
-    character(id: $characterId){
-      name
-      id
-      image
-      status
-      species
-      gender
-      origin{
-        name
-      }
-      location{
-        name
-      }
-    }
-  }
-`
 
 
 const Modal = ({id, onClose}) => {
@@ -33,7 +14,8 @@ const Modal = ({id, onClose}) => {
         <div className={style.modalConent}>
             <div className={style.modal}>
             <span onClick={onClose}>X</span>
-                Loading...
+            <img src="https://imager-prod.onquidd.com/quidds/108662-img-l-1570289420.gif"/>
+                <p>Loading...</p>
             </div>
         </div>
     )

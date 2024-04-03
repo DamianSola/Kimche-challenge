@@ -9,10 +9,8 @@ const Characters = ({data}) => {
     const [isOpen, setIsOpen] = useState(false)
     const [dataModal, setDataModal] = useState(null)
 
-    console.log(dataModal)
+    // console.log(data)
 
-    // useEffect(() => {
-    // },[])
 
     return(
         <div className={style.ContentChar}>
