@@ -15,6 +15,12 @@ const Characters = ({data}) => {
     return(
         <div className={style.ContentChar}>
             {isOpen && <Modal onClose={() => setIsOpen(false)} id={dataModal}/>}
+            {data.length === 0 && 
+            <div>
+                <img src="https://i.gifer.com/ZiaV.gif"/>
+                <h3>No hay personajes disponibles</h3>
+            </div> 
+            }
             {data && data.map(character => {
 
              return<Card

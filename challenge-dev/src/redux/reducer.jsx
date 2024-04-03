@@ -26,11 +26,26 @@ const reducer = (state = initialState, action) => {
       ...state,
       characters: action.payload
     };
-    case 'FILTER_CHARACTERS':
+    case 'FILTER_GENDER':
       return {
         ...state,
-        characters: action.payload
+        characters: state.characters.filter(e => e.gender === action.payload),
       };
+      case 'FILTER_STATUS':
+      return {
+        ...state,
+        characters: state.characters.filter(e => e.status ===  action.payload),
+      };
+      case 'FILTER_SPECIES':
+        return {
+          ...state,
+          characters: state.characters.filter(e => e.species ===  action.payload),
+        };
+      // case 'FILTER_CHARACTERS':
+      //   return {
+      //     ...state,
+      //     characters: action.payload
+      //   };
     default:
       return state;
   }

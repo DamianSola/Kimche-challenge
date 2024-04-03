@@ -33,14 +33,31 @@ export const getCharacterByName = (data) => {
     };
 };
 
-export const filterCharacters = (data) => {
-  // console.log(data[0].name);
+// export const filterCharacters = (data) => {
+//   return{
+//     type:'FILTER_CHARACTERS',
+//     payload: data
+//   }
+// }
 
+export const filterGender = (data) => {
+  console.log(data)
   return{
-    type:'FILTER_CHARACTERS',
+    type: 'FILTER_GENDER',
     payload: data
   }
 }
 
-
+export const filterStatus = (data) => {
+  return{
+    type: 'FILTER_STATUS',
+    payload: data
+  }
+}
   
+export const filterSpecies = (data) => {
+  return{
+    type: 'FILTER_SPECIES',
+    payload: data
+  }
+}

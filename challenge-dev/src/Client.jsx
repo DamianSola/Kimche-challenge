@@ -70,24 +70,3 @@ query getCharacterById( $characterId: ID!){
     }
   }
 `
-
-export const FILTER_CHARACTERS = gql`
-query allfilter($characterStatus: String, $characterGender: String, $characterSpecies: String) {
-  characters(filter:{status:$characterStatus, species: $characterSpecies, gender: $characterGender }) {
-   results {
-     name
-     image
-     id
-     status
-     species
-     gender
-     origin{
-       name
-     }
-     location{
-       name
-     }
-   }
- }
-}
-`
