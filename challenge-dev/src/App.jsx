@@ -7,6 +7,7 @@ import {GET_CHARACTER, GET_CHARACTER_BY_NAME } from './Client'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCharacters } from './redux/actions';
 import Pagination from './Components/Pagination/Index';
+import Footer from './Components/Footer/Index';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           characters && <Characters data={characters} />
        }
        {data &&<Pagination page={page} changePage={setPage}/>}
+       <Footer/>
       </div>
   )
 }
