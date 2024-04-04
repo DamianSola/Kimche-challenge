@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import {filterGender, filterSpecies, filterStatus} from "./../../redux/actions"
+import style from "./style.module.css"
 
 export const StatusFilter = () => {
 
@@ -11,7 +12,7 @@ export const StatusFilter = () => {
     }
 
     return(
-        <div>
+        <div className={style.filter}>
             <label>status: </label> 
             <select onChange={(e) => handleClick(e)} name="status" id="status">
                 {status && status.map((e,i) => <option value={e} key={i}>{e}</option>)} 
@@ -30,7 +31,7 @@ export const SpeciesFilter = () => {
     }
 
     return(
-        <div>
+        <div  className={style.filter}>
             <label>species: </label> 
             <select onChange={(e) => handleClick(e)} name="species" id="species">
                 {species && species.map((e,i) => <option value={e} key={i}>{e}</option>)} 
@@ -49,7 +50,7 @@ export const GenderFilter = () => {
     }
 
     return(
-        <div>
+        <div  className={style.filter}>
             <label>gender: </label>
             <select onChange={(e) => handleClick(e)} name="gender" id="gender">
                 {gender && gender.map((e,i) => <option value={e} key={i}>{e}</option>)}

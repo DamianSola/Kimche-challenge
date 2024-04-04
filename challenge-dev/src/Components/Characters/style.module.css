@@ -1,5 +1,23 @@
 .ContentChar{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    padding: 20px;
+}
+
+.NoResults{
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    /* justify-items: center; */
+    height: 50%;
+    width: 100%;
+}
+.NoResults img{
+    margin: auto;
+    width: 300px;
+}
+
+.NoResults h3{
+    margin: auto;
 }

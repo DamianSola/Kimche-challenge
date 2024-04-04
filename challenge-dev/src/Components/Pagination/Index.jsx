@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
-
+import style from "./style.module.css"
 
 const Pagination = ({page, changePage}) => {
 
@@ -11,11 +11,11 @@ const Pagination = ({page, changePage}) => {
     }
 
     return(
-        <div>
-            <button onClick={() => handleChange(page-1)}>prev</button>
-            <span key="1" onClick={() => handleChange(1)}>1... </span>
-            {page !== 1 && <span key="2">{page}</span>}
-           {page !== pages && <span key="3" onClick={() => handleChange(pages)}> ...{pages}</span>}
+        <div  className={style.pagination}>
+            <button onClick={() => handleChange(page-1)} >prev</button>
+            <span onClick={() => handleChange(1)}>1... </span>
+            {page !== 1 && <span className={style.currentPage}>{page}</span>}
+           {page !== pages && <span  onClick={() => handleChange(pages)}> ...{pages}</span>}
             <button onClick={() => handleChange(page+1)}>next</button>
         </div>
     )

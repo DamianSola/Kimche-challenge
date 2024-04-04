@@ -9,14 +9,11 @@ const Characters = ({data}) => {
     const [isOpen, setIsOpen] = useState(false)
     const [dataModal, setDataModal] = useState(null)
 
-    // console.log(data)
-
-
     return(
         <div className={style.ContentChar}>
             {isOpen && <Modal onClose={() => setIsOpen(false)} id={dataModal}/>}
             {data.length === 0 && 
-            <div>
+            <div className={style.NoResults}>
                 <img src="https://i.gifer.com/ZiaV.gif"/>
                 <h3>No hay personajes disponibles</h3>
             </div> 

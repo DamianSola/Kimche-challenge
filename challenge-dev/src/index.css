@@ -62,7 +62,7 @@ button:focus-visible {
 } */
 
 body {
-  display: flex;
+  display: block;
   background-color: rgb(49, 49, 49);
   padding: 0%;
 }

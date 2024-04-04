@@ -29,8 +29,7 @@ function App() {
   }, [data])
 
   return (
-    <>
-      <div className='home-content'>
+      <div >
        <NavBar cleanFilter={addData}/>
        {data &&<Pagination page={page} changePage={setPage}/>}
        {
@@ -40,7 +39,6 @@ function App() {
        }
        {data &&<Pagination page={page} changePage={setPage}/>}
       </div>
-    </>
   )
 }
 

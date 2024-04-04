@@ -18,9 +18,10 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 } */
 
-/* .home-content{
-
-} */
+.home-content{
+  justify-content: center;
+  width: 100%;
+}
 /* 
 @keyframes logo-spin {
   from {

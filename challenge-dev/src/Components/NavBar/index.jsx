@@ -19,20 +19,22 @@ const NavBar = ({cleanFilter}) => {
         setCharacter(e.target.value);
     }
 
-
     useEffect(() => {
         data && dispatch(getCharacterByName(data.characters.results))
     },[data])
 
     return(
         <nav className={style.navContent}>
-            <img className={style.navImg} src="https://i.pinimg.com/736x/cf/c3/08/cfc308095c39dbb5a7975d5e89564836.jpg"/>
             <div className={style.searchContent}>
+            <img className={style.navImg} src="https://i.pinimg.com/736x/cf/c3/08/cfc308095c39dbb5a7975d5e89564836.jpg"/>
                 <input className={style.search} onChange={(e) => handleInputChange(e)} type="text" placeholder="search character..."/>
+            </div>
+            <br/>
+            <div className={style.buttonClean}>
             <GenderFilter/>
             <SpeciesFilter/>
             <StatusFilter/>
-            <button onClick={cleanFilter}>limpiar filtros</button>
+                <button className={style.clean} onClick={cleanFilter}>limpiar filtros</button>
             </div>
         </nav>
     )
