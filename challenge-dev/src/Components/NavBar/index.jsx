@@ -8,26 +8,32 @@ import { GenderFilter, SpeciesFilter, StatusFilter } from "../Filters/Index";
 
 const NavBar = ({cleanFilter}) => {
 
-    const [character, setCharacter] = useState([])
+    const [character, setCharacter] = useState('')
     const {loading, error, data} = useQuery(GET_CHARACTER_BY_NAME, {
         variables: { characterName : character },
     });
     const dispatch = useDispatch()
    
-    
     const  handleInputChange = (e) => {
         setCharacter(e.target.value);
     }
 
-    useEffect(() => {
-        data && dispatch(getCharacterByName(data.characters.results))
-    },[data])
+    const handleClick = () => {
+        setCharacter('');
+        dispatch(getCharacterByName(data.characters.results))
+    }
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') handleClick()
+    }
+
 
     return(
         <nav className={style.navContent}>
             <div className={style.searchContent}>
             <img className={style.navImg} src="https://i.pinimg.com/736x/cf/c3/08/cfc308095c39dbb5a7975d5e89564836.jpg"/>
-                <input className={style.search} onChange={(e) => handleInputChange(e)} type="text" placeholder="search character..."/>
+                <input className={style.search} onChange={(e) => handleInputChange(e)} onKeyDown={handleKeyDown} type="text" placeholder="search character..."/>
+                <button onClick={handleClick} className={style.clean}>buscar</button>
             </div>
             <br/>
             <div className={style.buttonClean}>
