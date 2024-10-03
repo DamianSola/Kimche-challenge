@@ -73,13 +73,14 @@
     }
 
     .modal span{
-       color: black;
        padding: 5px;
        margin: 5px;
        font-weight: 700px;
        color: aliceblue;
-       background-color: rgba(48, 48, 48, 0.349);
+       background-color: rgba(0, 0, 0, 0.806);
        border-radius: 30%;
+       top: 2px;
+       right: 2px;
     }
 
     .imageContainer{
