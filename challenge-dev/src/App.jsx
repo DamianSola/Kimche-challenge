@@ -10,6 +10,7 @@ import Pagination from './Components/Pagination/Index';
 import Footer from './Components/Footer/Index';
 
 
+
 function App() {
 
   const [page, setPage] = useState(1)
@@ -30,12 +31,13 @@ function App() {
   }, [data])
 
   return (
-      <div >
+      <div className='home-content'>
        <NavBar cleanFilter={addData}/>
        {data &&<Pagination page={page} changePage={setPage}/>}
        {
           loading? <img src="https://imager-prod.onquidd.com/quidds/108662-img-l-1570289420.gif"/>:
           error? <p>Error! {error.message} </p>:
+          // characters && <img src="https://imager-prod.onquidd.com/quidds/108662-img-l-1570289420.gif"/>
           characters && <Characters data={characters} />
        }
        {data &&<Pagination page={page} changePage={setPage}/>}

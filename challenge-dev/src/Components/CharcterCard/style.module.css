@@ -49,3 +49,16 @@
     font-size: 15px;
     color: #ddd;
 }
+
+
+@media screen and (max-width: 600px) {
+    .contentCard {
+      width: 45%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contentCard {
+      width: 40%;
+    }
+}

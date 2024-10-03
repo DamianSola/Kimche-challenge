@@ -3,7 +3,9 @@
     padding: 5px 5px;
     margin: 5px;
     background-color: rgba(0, 0, 0, 0);
-    min-width: 200px;
+    /* min-width: 200px; */
+    width:fit-content;
+
 }
 
 .filter label{
@@ -29,4 +31,14 @@
     color: white;
     background-color: rgb(62, 62, 62);
     text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    .filter{
+        display: flex;
+        flex-direction: column;
+        padding: 10px 2px;
+        /* margin: 5px; */
+        width:fit-content;
+    }
 }

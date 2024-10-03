@@ -21,3 +21,9 @@
 .NoResults h3{
     margin: auto;
 }
+
+@media screen and (max-width: 600px) {
+    .ContentChar{
+        padding: 0px;
+    }
+}
