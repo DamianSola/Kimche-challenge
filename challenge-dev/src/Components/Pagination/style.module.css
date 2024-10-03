@@ -8,15 +8,16 @@
 
 .pagination button{
     background-color: rgb(67, 67, 67);
-    padding: 5px;
+    padding: 2px 10px ;
     margin: 5px;
     border-style: none;
-    border-radius: 2px;
+    border-radius: 10px;
     color: aqua;
     border: solid 1px aqua;
     cursor: pointer;
     transition: all .3s ease;
     font-weight: 700px;
+    box-shadow: 2px 2px 5px black;
 }
 
 .pagination button:hover{

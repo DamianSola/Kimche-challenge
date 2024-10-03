@@ -11,7 +11,8 @@ const Card = ({ name, image, id, openModal, upDate}) => {
     return (
         <div className={style.contentCard}>
             <img src={image} alt={name} className={style.imgCard}/>
-            <button className={style.name} onClick={() => handleChange(id)}>{name}</button>
+            <p className={style.name}>{name}</p>
+            <button className={style.detailButton} onClick={() => handleChange(id)}>ver detalles</button>
         </div>
     )
 }

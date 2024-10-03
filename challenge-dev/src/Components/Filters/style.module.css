@@ -17,12 +17,16 @@
     padding: none;
     background-color: rgba(0, 0, 0, 0);
     color: aliceblue;
+    border: solid 1.5px aqua;
     border-color: aqua;
     width: 100%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
 }
 
 .filter option{
-    padding: none;
-    color: black;
-
+    padding: 5px;
+    color: white;
+    background-color: rgb(62, 62, 62);
+    text-align: center;
 }

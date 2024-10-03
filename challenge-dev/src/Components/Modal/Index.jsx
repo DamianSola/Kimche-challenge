@@ -13,9 +13,17 @@ const Modal = ({id, onClose}) => {
     if(loading) return (
         <div className={style.modalConent}>
             <div className={style.modal}>
-            <span onClick={onClose}>X</span>
+            <span onClick={onClose}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffff">
+                        <path d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"/></svg>
+            </span>
+            <div className={style.imageContainer}>
+
             <img src="https://imager-prod.onquidd.com/quidds/108662-img-l-1570289420.gif"/>
-                <p>Loading...</p>
+            </div>
+            <div className={style.info}>
+                <h2>Loading...</h2>
+            </div>
             </div>
         </div>
     )
@@ -31,7 +39,10 @@ const Modal = ({id, onClose}) => {
     return(
         <div className={style.modalConent}>
             <div className={style.modal}>
-                <span onClick={onClose}>X</span>
+                <span onClick={onClose}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffff">
+                        <path d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"/></svg>
+                    </span>
                 <div className={style.imageContainer}>
                 <img src={data.character.image} alt="foto-personaje-R&M"/>
                 </div>
